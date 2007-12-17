@@ -11,7 +11,6 @@ Group: Sound
 URL: http://jzb.rapanden.dk/projects/speex-xmms
 Source: http://jzb.rapanden.dk/pub/speex-xmms-0.9.1.tar.bz2
 Patch: speex-xmms-0.9.1-gcc4.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: xmms 
 BuildRequires: xmms-devel libspeex-devel
 BuildRequires: libogg-devel
