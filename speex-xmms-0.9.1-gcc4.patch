@@ -1,0 +1,30 @@
+diff -Nur speex-xmms-orig/speexutil.c speex-xmms/speexutil.c
+--- speex-xmms-orig/speexutil.c	2003-08-03 18:18:34.000000000 +0200
++++ speex-xmms/speexutil.c	2005-04-13 12:38:58.000000000 +0200
+@@ -239,7 +239,7 @@
+ 
+ 
+ 	//fwd vendor-length
+-	((int*) packet)++;
++	packet += sizeof(int);
+ 	len -= sizeof(int);
+ 	if (comment->vendor_length > len) return 0;
+ 
+@@ -260,7 +260,7 @@
+ 	comment->comments = calloc(comment->comment_num, sizeof(int));
+ 	
+ 	//fwd number of comments
+-	((int*) packet)++;
++	packet += sizeof(int);
+ 	len -= sizeof(int);
+ 	if (comment->comment_num > 0 && len < sizeof(int)) return 0;
+ 	
+@@ -270,7 +270,7 @@
+ 		this_length = *(int*) packet;
+ 
+ 		//fwd comment-length
+-		((int*) packet)++;
++		packet += sizeof(int);
+ 		len -= sizeof(int);
+ 		if (len < this_length) return 0;
+ 
