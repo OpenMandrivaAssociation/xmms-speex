@@ -1,6 +1,6 @@
 %define name xmms-speex
 %define version 0.9.1
-%define release %mkrel 6
+%define release 7
 
 Summary: Speex support for XMMS
 Name: %name
